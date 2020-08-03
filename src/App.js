@@ -10,11 +10,12 @@ const App = () => {
     <PotterState>
       <BrowserRouter>
         <Navbar />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
-        </Switch>
-        <div></div>
+        <div className="App container">
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
+          </Switch>
+        </div>
       </BrowserRouter>
     </PotterState>
   );

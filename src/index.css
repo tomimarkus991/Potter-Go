@@ -3,7 +3,52 @@
   src: url("./assets/fonts/HarryPotterFont.ttf");
 }
 
+:root {
+  --primary: #18191a;
+  --secondary: #242526;
+  --light: #3a3b3c;
+  --extralight: #4e4f50;
+
+  --whiteText: #e4e6eb;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
 body {
+  background-color: var(--primary);
   font-family: "Harry Potter";
-  color: "#E4E6EB";
+  color: var(--whiteText);
+}
+
+.toggler {
+  color: var(--whiteText);
+}
+
+.navbar {
+  background-color: var(--secondary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-link {
+  text-decoration: none;
+}
+.navbar-nav {
+  list-style: none;
+  float: right;
+}
+.navbar-nav li {
+  display: inline-block;
+  margin-right: 1rem;
+}
+.nav-img {
+  vertical-align: middle;
+  width: 4rem;
+  margin: 0.5rem 1rem;
+}
+.nav-text {
+  font-size: 2rem;
+  color: var(--whiteText);
 }
