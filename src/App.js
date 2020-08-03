@@ -2,8 +2,8 @@ import React from "react";
 
 const App = () => {
   return (
-    <div>
-      <span>tere</span>
+    <div className="my-4">
+      <h1>Harry Potter</h1>
     </div>
   );
 };
