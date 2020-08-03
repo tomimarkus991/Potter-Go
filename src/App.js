@@ -1,10 +1,22 @@
 import React from "react";
+import PotterState from "./contexts/potter/PotterState";
+import Navbar from "./components/layout/Navbar";
+import Home from "./components/pages/Home";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import About from "./components/pages/About";
 
 const App = () => {
   return (
-    <div className="my-4">
-      <h1>Harry Potter</h1>
-    </div>
+    <PotterState>
+      <BrowserRouter>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/about" component={About} />
+        </Switch>
+        <div></div>
+      </BrowserRouter>
+    </PotterState>
   );
 };
 
