@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import {
   HogwartsRegular,
   HomeRegular,
@@ -9,11 +9,20 @@ import {
   SortingHatRegular,
 } from "../../assets/icons/navbarRegular/NavbarRegular";
 
-import { WizardsHover } from "../../assets/icons/navbarHover/NavbarHover";
-import { WizardsActive } from "../../assets/icons/navbarActive/NavbarActive";
+import {
+  HomeHover,
+  WizardsHover,
+  PotionsHover,
+  HousesHover,
+  SortingHatHover,
+} from "../../assets/icons/navbarHover/NavbarHover";
 
 const Navbar = () => {
+  const [homeTrainIcon, setHomeTrainIcon] = useState(HomeRegular);
   const [wizardIcon, setWizardIcon] = useState(WizardsRegular);
+  const [potionsIcon, setPotionsIcon] = useState(PotionsRegular);
+  const [housesIcon, setHousesIcon] = useState(HousesRegular);
+  const [sortingHatIcon, setSortingHatIcon] = useState(SortingHatRegular);
   return (
     <nav className="navbar">
       <span
@@ -25,61 +34,55 @@ const Navbar = () => {
       >
         <i className="fas fa-bars"></i>
       </span>
-      <li className="nav-item">
-        <NavLink className="nav-link" to="/">
+      <li className="nav-logo">
+        <Link className="nav-link" to="/">
           <img className="nav-img" src={HogwartsRegular} alt="Hogwarts" />
           <span className="nav-text">Harry Potter</span>
-        </NavLink>
+        </Link>
       </li>
       <ul className="navbar-nav">
-        <li>
-          <NavLink className="nav-link" to="/">
-            <img className="nav-icon" src={HomeRegular} alt="Hogwarts Train" />
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            className="nav-link"
-            to="/wizards"
-            onClick={(e) => {
-              if (
-                e.target.parentElement.classList.contains("active") ||
-                e.target.classList.contains("active")
-              ) {
-                setWizardIcon(WizardsActive);
-              }
-            }}
-          >
+        <li
+          onMouseEnter={() => setHomeTrainIcon(HomeHover)}
+          onMouseLeave={() => setHomeTrainIcon(HomeRegular)}
+        >
+          <NavLink className="nav-link active" to="/">
             <img
               className="nav-icon"
-              src={wizardIcon}
-              alt="Wizards"
-              onMouseEnter={() => setWizardIcon(WizardsHover)}
-              onMouseLeave={() => {
-                if (wizardIcon !== WizardsActive) {
-                  setWizardIcon(WizardsRegular);
-                }
-              }}
+              src={homeTrainIcon}
+              alt="Hogwarts Train"
             />
           </NavLink>
         </li>
-        <li>
+        <li
+          onMouseEnter={() => setWizardIcon(WizardsHover)}
+          onMouseLeave={() => setWizardIcon(WizardsRegular)}
+        >
+          <NavLink className="nav-link active" to="/wizards">
+            <img className="nav-icon" src={wizardIcon} alt="Wizards" />
+          </NavLink>
+        </li>
+        <li
+          onMouseEnter={() => setPotionsIcon(PotionsHover)}
+          onMouseLeave={() => setPotionsIcon(PotionsRegular)}
+        >
           <NavLink className="nav-link" to="/potions">
-            <img className="nav-icon" src={PotionsRegular} alt="Potions" />
+            <img className="nav-icon" src={potionsIcon} alt="Potions" />
           </NavLink>
         </li>
-        <li>
+        <li
+          onMouseEnter={() => setHousesIcon(HousesHover)}
+          onMouseLeave={() => setHousesIcon(HousesRegular)}
+        >
           <NavLink className="nav-link" to="/houses">
-            <img className="nav-icon" src={HousesRegular} alt="Houses" />
+            <img className="nav-icon" src={housesIcon} alt="Houses" />
           </NavLink>
         </li>
-        <li>
+        <li
+          onMouseEnter={() => setSortingHatIcon(SortingHatHover)}
+          onMouseLeave={() => setSortingHatIcon(SortingHatRegular)}
+        >
           <NavLink className="nav-link" to="/sortingHat">
-            <img
-              className="nav-icon"
-              src={SortingHatRegular}
-              alt="Sorting Hat"
-            />
+            <img className="nav-icon" src={sortingHatIcon} alt="Sorting Hat" />
           </NavLink>
         </li>
       </ul>

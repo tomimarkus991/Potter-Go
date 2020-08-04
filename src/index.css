@@ -10,6 +10,8 @@
   --extralight: #4e4f50;
 
   --whiteText: #e4e6eb;
+
+  --iconBlue: #4090fa;
 }
 
 * {
@@ -33,29 +35,33 @@ body {
   text-align: center;
 }
 .navbar-nav li {
+  margin: 0;
+  padding: 0;
   list-style-type: none;
   display: inline-block;
-  font-size: 2vh;
+  border-bottom: 10px var(--iconBlue) solid transparent;
 }
 .nav-link {
+  width: 100%;
   text-decoration: none;
 }
 .nav-icon {
-  padding: 1vh 2.5vh;
+  padding: 2vh 2.2vh;
   width: 11vh;
 }
 
-.nav-link :hover {
+.navbar-nav li:hover {
   background-color: var(--light);
-  border-bottom: 7px #4090fa solid;
+  border-bottom: 7px var(--iconBlue) solid;
 }
 
 .nav-img {
   vertical-align: middle;
-  width: 10vh;
+  width: 9vh;
   margin: 0.5rem 1rem;
 }
 .nav-text {
+  padding: 13% 0;
   font-size: 1.7rem;
   color: var(--whiteText);
 }
@@ -71,6 +77,8 @@ body {
 .active2 {
   display: block;
 }
+
+/* content: url("./assets/icons/navbarActive/wizards-active.png"); */
 
 @media screen and (max-width: 800px) {
   .nav-icon {
@@ -92,12 +100,8 @@ body {
     flex-direction: row;
     justify-content: flex-end;
   }
-
   .navbar-nav li {
-    margin: 0;
-  }
-  .nav-link {
-    margin-left: 10px;
+    margin: 0 5px;
   }
   .navbar-toggle {
     display: none;
