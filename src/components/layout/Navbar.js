@@ -1,57 +1,86 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import {
-  HOGWARTS_ICON,
-  WIZARDS_ICON,
-  POTIONS_ICON,
-  HOUSES_ICON,
-  SORTING_HAT_ICON,
-  HOGWARTS_TRAIN,
-} from "../../assets/icons/icons";
-import HogwartsRegular from "../../assets/icons/hogwarts-regular.png";
+  HogwartsRegular,
+  HomeRegular,
+  WizardsRegular,
+  PotionsRegular,
+  HousesRegular,
+  SortingHatRegular,
+} from "../../assets/icons/navbarRegular/NavbarRegular";
+
+import { WizardsHover } from "../../assets/icons/navbarHover/NavbarHover";
+import { WizardsActive } from "../../assets/icons/navbarActive/NavbarActive";
 
 const Navbar = () => {
+  const [wizardIcon, setWizardIcon] = useState(WizardsRegular);
   return (
     <nav className="navbar">
-      <li className="navbar-nav nav-item">
-        <Link className="nav-link" to="/">
+      <span
+        className="navbar-toggle"
+        onClick={() => {
+          const navbarNav = document.querySelector(".navbar-nav");
+          navbarNav.classList.toggle("active2");
+        }}
+      >
+        <i className="fas fa-bars"></i>
+      </span>
+      <li className="nav-item">
+        <NavLink className="nav-link" to="/">
           <img className="nav-img" src={HogwartsRegular} alt="Hogwarts" />
           <span className="nav-text">Harry Potter</span>
-        </Link>
+        </NavLink>
       </li>
       <ul className="navbar-nav">
         <li>
-          <Link className="nav-link" to="/">
+          <NavLink className="nav-link" to="/">
+            <img className="nav-icon" src={HomeRegular} alt="Hogwarts Train" />
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className="nav-link"
+            to="/wizards"
+            onClick={(e) => {
+              if (
+                e.target.parentElement.classList.contains("active") ||
+                e.target.classList.contains("active")
+              ) {
+                setWizardIcon(WizardsActive);
+              }
+            }}
+          >
             <img
-              src={HOGWARTS_TRAIN}
-              alt="Hogwarts Train"
-              style={{ width: "4em" }}
+              className="nav-icon"
+              src={wizardIcon}
+              alt="Wizards"
+              onMouseEnter={() => setWizardIcon(WizardsHover)}
+              onMouseLeave={() => {
+                if (wizardIcon !== WizardsActive) {
+                  setWizardIcon(WizardsRegular);
+                }
+              }}
             />
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link className="nav-link" to="/wizards">
-            <img src={WIZARDS_ICON} alt="Wizards" style={{ width: "4em" }} />
-          </Link>
+          <NavLink className="nav-link" to="/potions">
+            <img className="nav-icon" src={PotionsRegular} alt="Potions" />
+          </NavLink>
         </li>
         <li>
-          <Link className="nav-link" to="/potions">
-            <img src={POTIONS_ICON} alt="Potions" style={{ width: "4em" }} />
-          </Link>
+          <NavLink className="nav-link" to="/houses">
+            <img className="nav-icon" src={HousesRegular} alt="Houses" />
+          </NavLink>
         </li>
         <li>
-          <Link className="nav-link" to="/houses">
-            <img src={HOUSES_ICON} alt="Houses" style={{ width: "4em" }} />
-          </Link>
-        </li>
-        <li>
-          <Link className="nav-link" to="/sortingHat">
+          <NavLink className="nav-link" to="/sortingHat">
             <img
-              src={SORTING_HAT_ICON}
+              className="nav-icon"
+              src={SortingHatRegular}
               alt="Sorting Hat"
-              style={{ width: "4em" }}
             />
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>
