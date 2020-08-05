@@ -12,6 +12,7 @@
   --whiteText: #e4e6eb;
 
   --iconBlue: #4090fa;
+  --darkerBlue: #174b8f;
 }
 
 * {
@@ -31,8 +32,8 @@ body {
 }
 .navbar-nav {
   list-style-type: none;
-  display: none;
   text-align: center;
+  display: none;
 }
 .navbar-nav li {
   margin: 0;
@@ -41,7 +42,6 @@ body {
   display: inline-block;
 }
 .nav-link {
-  width: 100%;
   text-decoration: none;
 }
 .nav-icon {
@@ -49,12 +49,10 @@ body {
   width: 11vh;
   border-radius: 35px;
 }
-
 .nav-link:hover {
   border-bottom: 7px var(--iconBlue) solid;
   transition: border-bottom 0.25s;
 }
-
 .nav-img {
   vertical-align: middle;
   width: 9vh;
@@ -73,7 +71,6 @@ body {
   color: rgba(255, 255, 255, 0.8);
   font-size: 24px;
 }
-
 .active2 {
   display: block;
 }
@@ -82,6 +79,30 @@ body {
 }
 .container {
   text-align: center;
+}
+.list-group-wizards {
+  list-style-type: none;
+  list-style: none;
+}
+.wizard-link {
+  text-decoration: none;
+  list-style-type: none;
+  color: var(--darkerBlue);
+}
+.list-group-item {
+  text-decoration: none;
+}
+.wizard-search-input {
+  color: var(--whiteText);
+  background-color: var(--secondary);
+  border: 2px solid var(--whiteText);
+  border-radius: 40px;
+  padding: 10px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.headline {
+  margin-top: 20px;
 }
 
 /* content: url("./assets/icons/navbarActive/wizards-active.png"); */

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import PotterContext from "../../contexts/potter/PotterContext";
 import { Link } from "react-router-dom";
+import { motion } from "framer";
 
 const SearchWizards = ({ wizards }) => {
   const { handleWizardsSearchChange, isSearching } = useContext(PotterContext);
@@ -10,11 +11,12 @@ const SearchWizards = ({ wizards }) => {
   }, []);
   return (
     <div>
-      <input
+      <motion.input
         type="text"
         placeholder="Find someone"
         className="wizard-search-input"
         onChange={(e) => handleWizardsSearchChange(e.target)}
+        whileHover={{ scale: 1.2 }}
       />
       {isSearching && (
         <ul className="list-group wizardsUL mb-4">

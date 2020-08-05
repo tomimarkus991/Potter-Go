@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
-import Wizard from "./Wizard";
+import { motion } from "framer";
 
 const Wizards = ({ wizards, isLoading, isSearching }) => {
   if (isLoading) {
@@ -9,12 +9,24 @@ const Wizards = ({ wizards, isLoading, isSearching }) => {
   return (
     <Fragment>
       {isSearching === false && (
-        <ul className="list-group namesUL mb-4">
+        <ul className="list-group-wizards namesUL mb-4">
           {wizards.map((wizard) => {
             return (
-              <li key={wizard._id} className="list-group-item">
-                <Link to={`/wizards/${wizard._id}`}>{wizard.name}</Link>
-              </li>
+              <motion.li
+                key={wizard._id}
+                className="list-group-item"
+                whileHover={{ scale: 1.5, color: "#4090fa" }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Link className="wizard-link" to={`/wizards/${wizard._id}`}>
+                  <motion.span
+                    initial={{ fontSize: "25px" }}
+                    whileHover={{ color: "#4090fa" }}
+                  >
+                    {wizard.name}
+                  </motion.span>
+                </Link>
+              </motion.li>
             );
           })}
         </ul>

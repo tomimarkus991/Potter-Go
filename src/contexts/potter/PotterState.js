@@ -17,7 +17,7 @@ const PotterState = ({ children }) => {
     wizards: [],
     wizard: "",
     currentPage: 1,
-    itemsPerPage: 10,
+    itemsPerPage: 13,
   };
   const [state, dispatch] = useReducer(PotterReducer, initialState);
   const {
