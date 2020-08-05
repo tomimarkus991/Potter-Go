@@ -77,12 +77,20 @@ body {
 .active2 {
   display: block;
 }
+.hide {
+  display: none;
+}
+.container {
+  text-align: center;
+}
 
 /* content: url("./assets/icons/navbarActive/wizards-active.png"); */
 
 @media screen and (max-width: 800px) {
   .nav-icon {
     width: 10vh;
+  }
+  .container {
   }
 }
 
@@ -105,5 +113,7 @@ body {
   }
   .navbar-toggle {
     display: none;
+  }
+  .container {
   }
 }
