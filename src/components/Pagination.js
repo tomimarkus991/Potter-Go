@@ -13,16 +13,20 @@ const Pagination = ({ itemsPerPage, totalItems }) => {
       {isSearching === false && (
         <Fragment>
           {" "}
-          <button onClick={() => paginate(Math.max(currentPage - 1, 1))}>
-            prev
-          </button>
-          <span>{currentPage}</span>
           <button
+            className="pagination-button"
+            onClick={() => paginate(Math.max(currentPage - 1, 1))}
+          >
+            <i className="fas fa-arrow-left"></i>
+          </button>
+          <span className="current-page">{currentPage}</span>
+          <button
+            className="pagination-button"
             onClick={() =>
               paginate(Math.min(currentPage + 1, pageNumbers.length))
             }
           >
-            next
+            <i className="fas fa-arrow-right"></i>
           </button>
         </Fragment>
       )}

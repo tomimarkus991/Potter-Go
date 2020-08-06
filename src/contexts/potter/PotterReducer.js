@@ -1,8 +1,6 @@
 import {
   SET_SEARCHING,
   SET_LOADING,
-  SET_WIZARD,
-  SET_WIZARDS,
   SET_POTIONS,
   SET_PAGE_NUMBER,
 } from "../types";
@@ -18,16 +16,6 @@ export default (state, action) => {
       return {
         ...state,
         isLoading: action.payload,
-      };
-    case SET_WIZARD:
-      return {
-        ...state,
-        wizard: action.payload,
-      };
-    case SET_WIZARDS:
-      return {
-        ...state,
-        wizards: action.payload,
       };
     case SET_POTIONS:
       return {

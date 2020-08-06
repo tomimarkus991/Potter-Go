@@ -5,8 +5,6 @@ import axios from "axios";
 import {
   SET_SEARCHING,
   SET_LOADING,
-  SET_WIZARD,
-  SET_WIZARDS,
   SET_POTIONS,
   SET_PAGE_NUMBER,
 } from "../types";
@@ -15,24 +13,13 @@ const PotterState = ({ children }) => {
   const initialState = {
     isSearching: false,
     isLoading: false,
-    wizard: "",
-    wizards: [],
     potions: [],
     currentPage: 1,
     itemsPerPage: 13,
   };
   const [state, dispatch] = useReducer(PotterReducer, initialState);
-  const {
-    isSearching,
-    isLoading,
-    wizards,
-    wizard,
-    potions,
-    currentPage,
-    itemsPerPage,
-  } = state;
+  const { isSearching, isLoading, potions, currentPage, itemsPerPage } = state;
 
-  // Wizards
   const filterItems = (term) => {
     setSearching(true);
     const list = document.querySelector(".searchUL");
@@ -56,24 +43,6 @@ const PotterState = ({ children }) => {
       const term = e.value.trim().toLowerCase();
       filterItems(term);
     }
-  };
-
-  const getWizard = async (characterId) => {
-    setLoading(true);
-    const res = await axios.get(
-      `https://www.potterapi.com/v1/characters/${characterId}?key=$2a$10$ySBrKvbcDFU/nmahzEQPRej0W0ItuaCWrJWCy9VZ.Mcf.3GQiMDZ2`
-    );
-    dispatch({ type: SET_WIZARD, payload: res.data });
-    setLoading(false);
-  };
-
-  const getWizards = async () => {
-    setLoading(true);
-    const res = await axios.get(
-      "https://www.potterapi.com/v1/characters?key=$2a$10$ySBrKvbcDFU/nmahzEQPRej0W0ItuaCWrJWCy9VZ.Mcf.3GQiMDZ2"
-    );
-    dispatch({ type: SET_WIZARDS, payload: res.data });
-    setLoading(false);
   };
 
   const getPotions = async () => {
@@ -101,10 +70,6 @@ const PotterState = ({ children }) => {
       value={{
         isSearching,
         isLoading,
-        getWizard,
-        getWizards,
-        wizard,
-        wizards,
         potions,
         getPotions,
         paginate,

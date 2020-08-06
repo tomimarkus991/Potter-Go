@@ -32,7 +32,6 @@ const Search = ({ wizards, potions }) => {
       {isSearching && potions !== undefined && wizards === undefined && (
         <ul className="searchUL">
           {potions.map((potion) => {
-            console.log(potion);
             return (
               <li key={potion._id} className="list-group-item">
                 <span>{potion.spell}</span>
