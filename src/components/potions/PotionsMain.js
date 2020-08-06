@@ -1,43 +1,44 @@
 import React, { useContext, useEffect } from "react";
 import PotterContext from "../../contexts/potter/PotterContext";
-import Wizards from "./Wizards";
-import Pagination from "../Pagination";
 import Search from "../layout/Search";
-import { motion } from "framer-motion";
+import Potions from "./Potions";
+import Pagination from "../Pagination";
+import { motion } from "framer";
 
-const WizardsMain = () => {
+const PotionsMain = () => {
   const {
-    isSearching,
+    potions,
+    getPotions,
     isLoading,
-    wizards,
-    getWizards,
+    isSearching,
     currentPage,
     itemsPerPage,
   } = useContext(PotterContext);
+
   useEffect(() => {
-    getWizards();
+    getPotions();
   }, []);
   // Change page
 
   // Get current items
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = wizards.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = potions.slice(indexOfFirstItem, indexOfLastItem);
 
   return (
     <div>
       <motion.h1 className="headline" drag={true}>
-        Wizards
+        Potions
       </motion.h1>
-      <Search wizards={wizards} />
-      <Wizards
-        wizards={currentItems}
+      <Search potions={potions} />
+      <Potions
+        potions={currentItems}
         isLoading={isLoading}
         isSearching={isSearching}
       />
-      <Pagination itemsPerPage={itemsPerPage} totalItems={wizards.length} />
+      <Pagination itemsPerPage={itemsPerPage} totalItems={potions.length} />
     </div>
   );
 };
 
-export default WizardsMain;
+export default PotionsMain;

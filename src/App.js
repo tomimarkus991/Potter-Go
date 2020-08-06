@@ -7,6 +7,7 @@ import About from "./components/pages/About";
 import WizardsMain from "./components/wizards/WizardsMain";
 import Wizard from "./components/wizards/Wizard";
 import NotFound from "./components/pages/NotFound";
+import PotionsMain from "./components/potions/PotionsMain";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
             <Route exact path="/wizards" component={WizardsMain} />
+            <Route exact path="/potions" component={PotionsMain} />
             <Route exact path="/wizards/:id" component={Wizard} />
             <Route component={NotFound} />
           </Switch>

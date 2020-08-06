@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import PotionItem from "./PotionItem";
 
-const Wizards = ({ wizards, isLoading, isSearching }) => {
+const Potions = ({ potions, isLoading, isSearching }) => {
   if (isLoading) {
     return <h2>Loading...</h2>;
   }
@@ -10,22 +10,20 @@ const Wizards = ({ wizards, isLoading, isSearching }) => {
     <Fragment>
       {isSearching === false && (
         <ul className="list-group-default">
-          {wizards.map((wizard) => {
+          {potions.map((potion) => {
             return (
               <motion.li
-                key={wizard._id}
+                key={potion._id}
                 className="list-group-item"
                 whileHover={{ scale: 1.5, color: "#4090fa" }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <Link className="default-link" to={`/wizards/${wizard._id}`}>
-                  <motion.span
-                    initial={{ fontSize: "25px" }}
-                    whileHover={{ color: "#4090fa" }}
-                  >
-                    {wizard.name}
-                  </motion.span>
-                </Link>
+                <motion.span
+                  initial={{ fontSize: "25px" }}
+                  whileHover={{ color: "#4090fa" }}
+                >
+                  <PotionItem potion={potion} />
+                </motion.span>
               </motion.li>
             );
           })}
@@ -35,4 +33,4 @@ const Wizards = ({ wizards, isLoading, isSearching }) => {
   );
 };
 
-export default Wizards;
+export default Potions;

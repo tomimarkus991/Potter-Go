@@ -2,9 +2,9 @@ import React, { useEffect, useContext } from "react";
 import PotterContext from "../../contexts/potter/PotterContext";
 
 const Wizard = ({ match }) => {
-  const { getWizardInfo, isLoading, wizard } = useContext(PotterContext);
+  const { getWizard, isLoading, wizard } = useContext(PotterContext);
   useEffect(() => {
-    getWizardInfo(match.params.id);
+    getWizard(match.params.id);
   }, []);
   const {
     bloodStatus,

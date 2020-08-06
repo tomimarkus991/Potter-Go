@@ -77,14 +77,16 @@ body {
 .hide {
   display: none;
 }
-.container {
+.App {
   text-align: center;
+  margin: 0 auto;
+  width: 700px;
 }
-.list-group-wizards {
+.list-group-default {
   list-style-type: none;
   list-style: none;
 }
-.wizard-link {
+.default-link {
   text-decoration: none;
   list-style-type: none;
   color: var(--darkerBlue);
@@ -92,7 +94,7 @@ body {
 .list-group-item {
   text-decoration: none;
 }
-.wizard-search-input {
+.search-input {
   color: var(--whiteText);
   background-color: var(--secondary);
   border: 2px solid var(--whiteText);
@@ -110,8 +112,6 @@ body {
 @media screen and (max-width: 800px) {
   .nav-icon {
     width: 10vh;
-  }
-  .container {
   }
 }
 
@@ -134,7 +134,5 @@ body {
   }
   .navbar-toggle {
     display: none;
-  }
-  .container {
   }
 }
