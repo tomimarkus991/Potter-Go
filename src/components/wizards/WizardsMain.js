@@ -15,7 +15,7 @@ const WizardsMain = () => {
 
   const fetchWizards = async () => {
     const res = await axios.get(
-      "https://www.potterapi.com/v1/characters?key=$2a$10$ySBrKvbcDFU/nmahzEQPRej0W0ItuaCWrJWCy9VZ.Mcf.3GQiMDZ2"
+      `https://www.potterapi.com/v1/characters?key=$2a$10$ySBrKvbcDFU/nmahzEQPRej0W0ItuaCWrJWCy9VZ.Mcf.3GQiMDZ2`
     );
     return res.data;
   };
@@ -24,7 +24,6 @@ const WizardsMain = () => {
   });
 
   if (status === "success") {
-    // Get current items
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
@@ -35,11 +34,17 @@ const WizardsMain = () => {
           Wizards
         </motion.h1>
         <Search wizards={data} />
-        <Wizards
-          wizards={currentItems}
-          isLoading={isLoading}
-          isSearching={isSearching}
-        />
+        <motion.div
+          initial={{ y: "-100vh" }}
+          animate={{ y: 0 }}
+          transition={{ type: "spring", stiffness: 70 }}
+        >
+          <Wizards
+            wizards={currentItems}
+            isLoading={isLoading}
+            isSearching={isSearching}
+          />
+        </motion.div>
         <Pagination itemsPerPage={itemsPerPage} totalItems={data.length} />
       </div>
     );

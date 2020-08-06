@@ -12,12 +12,12 @@ const Potions = ({ potions, isSearching }) => {
               <motion.li
                 key={potion._id}
                 className="list-group-item"
-                whileHover={{ scale: 1.5, color: "#4090fa" }}
+                whileHover={{ scale: 1.5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <motion.span
                   className="potion-list-item"
-                  initial={{ fontSize: "30px" }}
+                  initial={{ fontSize: "25px" }}
                   whileHover={{ color: "#4090fa" }}
                 >
                   <PotionItem potion={potion} />

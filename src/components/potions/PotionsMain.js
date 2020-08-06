@@ -15,7 +15,7 @@ const PotionsMain = () => {
 
   const fetchPotions = async () => {
     const res = await axios.get(
-      "https://www.potterapi.com/v1/spells?key=$2a$10$ySBrKvbcDFU/nmahzEQPRej0W0ItuaCWrJWCy9VZ.Mcf.3GQiMDZ2"
+      `https://www.potterapi.com/v1/spells?key=$2a$10$ySBrKvbcDFU/nmahzEQPRej0W0ItuaCWrJWCy9VZ.Mcf.3GQiMDZ2`
     );
     return res.data;
   };
@@ -38,11 +38,17 @@ const PotionsMain = () => {
           Potions
         </motion.h1>
         <Search potions={data} />
-        <Potions
-          potions={currentItems}
-          isLoading={isLoading}
-          isSearching={isSearching}
-        />
+        <motion.div
+          initial={{ y: "-100vh" }}
+          animate={{ y: 0 }}
+          transition={{ type: "spring", stiffness: 70 }}
+        >
+          <Potions
+            potions={currentItems}
+            isLoading={isLoading}
+            isSearching={isSearching}
+          />
+        </motion.div>
         <Pagination itemsPerPage={itemsPerPage} totalItems={data.length} />
       </div>
     );

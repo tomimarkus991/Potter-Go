@@ -24,7 +24,7 @@ const Search = ({ wizards, potions }) => {
             return (
               <motion.li
                 key={wizard._id}
-                whileHover={{ scale: 1.5, color: "#4090fa" }}
+                whileHover={{ scale: 1.5, originX: 0 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <Link className="default-link" to={`/wizards/${wizard._id}`}>
@@ -46,7 +46,7 @@ const Search = ({ wizards, potions }) => {
             return (
               <motion.li
                 key={potion._id}
-                whileHover={{ scale: 1.5, color: "#4090fa" }}
+                whileHover={{ scale: 1.5, originX: 0 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <motion.span

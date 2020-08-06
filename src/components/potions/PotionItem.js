@@ -5,6 +5,10 @@ const PotionItem = ({ potion }) => {
   return (
     <div className="potion-item">
       <span>{spell}</span>
+      <br />
+      <span>{type}</span>
+      <br />
+      <span>{effect}</span>
     </div>
   );
 };
