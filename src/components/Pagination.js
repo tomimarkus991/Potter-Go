@@ -11,7 +11,7 @@ const Pagination = ({ itemsPerPage, totalItems }) => {
   return (
     <Fragment>
       {isSearching === false && (
-        <Fragment>
+        <div className="margin-top">
           {" "}
           <button
             className="pagination-button"
@@ -28,7 +28,7 @@ const Pagination = ({ itemsPerPage, totalItems }) => {
           >
             <i className="fas fa-arrow-right"></i>
           </button>
-        </Fragment>
+        </div>
       )}
     </Fragment>
   );

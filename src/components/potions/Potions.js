@@ -2,10 +2,7 @@ import React, { Fragment } from "react";
 import { motion } from "framer-motion";
 import PotionItem from "./PotionItem";
 
-const Potions = ({ potions, isLoading, isSearching }) => {
-  if (isLoading) {
-    return <h2>Loading...</h2>;
-  }
+const Potions = ({ potions, isSearching }) => {
   return (
     <Fragment>
       {isSearching === false && (
@@ -19,7 +16,8 @@ const Potions = ({ potions, isLoading, isSearching }) => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <motion.span
-                  initial={{ fontSize: "25px" }}
+                  className="potion-list-item"
+                  initial={{ fontSize: "30px" }}
                   whileHover={{ color: "#4090fa" }}
                 >
                   <PotionItem potion={potion} />

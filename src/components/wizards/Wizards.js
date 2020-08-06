@@ -1,12 +1,8 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import Spinner from "../layout/spinner/Spinner";
 
 const Wizards = ({ wizards, isLoading, isSearching }) => {
-  if (isLoading) {
-    return <Spinner />;
-  }
   return (
     <Fragment>
       {isSearching === false && (

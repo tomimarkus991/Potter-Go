@@ -4,41 +4,49 @@ import Search from "../layout/Search";
 import Potions from "./Potions";
 import Pagination from "../Pagination";
 import { motion } from "framer";
+import { useQuery } from "react-query";
+import axios from "axios";
+import Spinner from "../layout/spinner/Spinner";
 
 const PotionsMain = () => {
-  const {
-    potions,
-    getPotions,
-    isLoading,
-    isSearching,
-    currentPage,
-    itemsPerPage,
-  } = useContext(PotterContext);
-
-  useEffect(() => {
-    getPotions();
-  }, []);
-  // Change page
-
-  // Get current items
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = potions.slice(indexOfFirstItem, indexOfLastItem);
-
-  return (
-    <div>
-      <motion.h1 className="headline" drag={true}>
-        Potions
-      </motion.h1>
-      <Search potions={potions} />
-      <Potions
-        potions={currentItems}
-        isLoading={isLoading}
-        isSearching={isSearching}
-      />
-      <Pagination itemsPerPage={itemsPerPage} totalItems={potions.length} />
-    </div>
+  const { isLoading, isSearching, currentPage, itemsPerPage } = useContext(
+    PotterContext
   );
+
+  const fetchPotions = async () => {
+    const res = await axios.get(
+      "https://www.potterapi.com/v1/spells?key=$2a$10$ySBrKvbcDFU/nmahzEQPRej0W0ItuaCWrJWCy9VZ.Mcf.3GQiMDZ2"
+    );
+    return res.data;
+  };
+
+  const { data, status } = useQuery("getPotions", fetchPotions, {
+    refetchOnWindowFocus: false,
+  });
+
+  if (status === "loading") {
+    return <Spinner />;
+  } else if (status === "success") {
+    // Get current items
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
+
+    return (
+      <div>
+        <motion.h1 className="headline" drag={true}>
+          Potions
+        </motion.h1>
+        <Search potions={data} />
+        <Potions
+          potions={currentItems}
+          isLoading={isLoading}
+          isSearching={isSearching}
+        />
+        <Pagination itemsPerPage={itemsPerPage} totalItems={data.length} />
+      </div>
+    );
+  }
 };
 
 export default PotionsMain;

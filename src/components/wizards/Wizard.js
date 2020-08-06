@@ -17,7 +17,7 @@ const Wizard = ({ match }) => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ delay: 0.3 }}
+      transition={{ delay: 0.4 }}
     >
       {status === "success" && <div>{data.name}</div>}
     </motion.div>

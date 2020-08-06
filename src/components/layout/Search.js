@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import PotterContext from "../../contexts/potter/PotterContext";
 import { Link } from "react-router-dom";
-import { motion } from "framer";
+import { motion } from "framer-motion";
 
 const Search = ({ wizards, potions }) => {
   const { handleSearchChange, isSearching } = useContext(PotterContext);
@@ -19,23 +19,44 @@ const Search = ({ wizards, potions }) => {
         whileHover={{ scale: 1.2 }}
       />
       {isSearching && wizards !== undefined && potions === undefined && (
-        <ul className="searchUL">
+        <ul className="searchUL list-group-default">
           {wizards.map((wizard) => {
             return (
-              <li key={wizard._id} className="list-group-item">
-                <Link to={`/wizards/${wizard._id}`}>{wizard.name}</Link>
-              </li>
+              <motion.li
+                key={wizard._id}
+                whileHover={{ scale: 1.5, color: "#4090fa" }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Link className="default-link" to={`/wizards/${wizard._id}`}>
+                  <motion.span
+                    initial={{ fontSize: "30px" }}
+                    whileHover={{ color: "#4090fa" }}
+                  >
+                    {wizard.name}
+                  </motion.span>
+                </Link>
+              </motion.li>
             );
           })}
         </ul>
       )}
       {isSearching && potions !== undefined && wizards === undefined && (
-        <ul className="searchUL">
+        <ul className="searchUL list-group-default">
           {potions.map((potion) => {
             return (
-              <li key={potion._id} className="list-group-item">
-                <span>{potion.spell}</span>
-              </li>
+              <motion.li
+                key={potion._id}
+                whileHover={{ scale: 1.5, color: "#4090fa" }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <motion.span
+                  className="potion-list-item"
+                  initial={{ fontSize: "30px" }}
+                  whileHover={{ color: "#4090fa" }}
+                >
+                  {potion.spell}
+                </motion.span>
+              </motion.li>
             );
           })}
         </ul>

@@ -1,3 +1,4 @@
+/* INITIAl */
 @font-face {
   font-family: "Harry Potter";
   src: url("./assets/fonts/HarryPotterFont.ttf");
@@ -26,6 +27,7 @@ body {
   color: var(--whiteText);
 }
 
+/* NAVBAR */
 .navbar {
   width: 100vw;
   background-color: var(--secondary);
@@ -77,11 +79,17 @@ body {
 .hide {
   display: none;
 }
+
+/* MAIN */
 .App {
   text-align: center;
   margin: 0 auto;
   width: 700px;
 }
+.headline {
+  margin-top: 20px;
+}
+
 .list-group-default {
   list-style-type: none;
   list-style: none;
@@ -91,8 +99,11 @@ body {
   list-style-type: none;
   color: var(--darkerBlue);
 }
-.list-group-item {
-  text-decoration: none;
+
+/* SEARCHING */
+.potion-list-item {
+  cursor: default;
+  color: var(--darkerBlue);
 }
 .search-input {
   color: var(--whiteText);
@@ -103,9 +114,10 @@ body {
   font-size: 20px;
   margin-bottom: 20px;
 }
-.headline {
-  margin-top: 20px;
+.searchUL {
 }
+
+/* PAGINATION */
 .pagination-button {
   color: var(--whiteText);
   background-color: var(--secondary);
@@ -119,8 +131,14 @@ body {
   font-size: 30px;
   margin: 0 20px;
 }
+
+/* SPINNER */
 .spinner {
   margin-top: 40%;
+}
+
+.margin-top {
+  margin-top: 10px;
 }
 
 /* content: url("./assets/icons/navbarActive/wizards-active.png"); */
