@@ -8,6 +8,7 @@ const Search = ({ wizards, potions }) => {
   useEffect(() => {
     const searchInput = document.querySelector(".search-input");
     handleSearchChange(searchInput);
+    // eslint-disable-next-line
   }, []);
   return (
     <div>
@@ -24,7 +25,7 @@ const Search = ({ wizards, potions }) => {
             return (
               <motion.li
                 key={wizard._id}
-                whileHover={{ scale: 1.5, originX: 0 }}
+                whileHover={{ scale: 1.5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <Link className="default-link" to={`/wizards/${wizard._id}`}>
@@ -46,7 +47,7 @@ const Search = ({ wizards, potions }) => {
             return (
               <motion.li
                 key={potion._id}
-                whileHover={{ scale: 1.5, originX: 0 }}
+                whileHover={{ scale: 1.5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <motion.span

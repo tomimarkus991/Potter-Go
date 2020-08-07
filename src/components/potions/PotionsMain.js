@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import PotterContext from "../../contexts/potter/PotterContext";
 import Search from "../layout/Search";
 import Potions from "./Potions";
@@ -39,7 +39,7 @@ const PotionsMain = () => {
         </motion.h1>
         <Search potions={data} />
         <motion.div
-          initial={{ y: "-100vh" }}
+          initial={{ y: "-50vh" }}
           animate={{ y: 0 }}
           transition={{ type: "spring", stiffness: 70 }}
         >

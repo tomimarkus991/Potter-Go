@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
-import PotterContext from "../../contexts/potter/PotterContext";
+import React from "react";
 import axios from "axios";
 import { useQuery } from "react-query";
 import { motion } from "framer";
 import Spinner from "../layout/spinner/Spinner";
+import NotFound from "../pages/NotFound";
 
 const Wizard = ({ match }) => {
   const fetchWizard = async () => {
@@ -14,6 +14,9 @@ const Wizard = ({ match }) => {
   };
   const { data, status } = useQuery("getWizard", fetchWizard);
   if (status === "success") {
+    if (data.name === "CastError") {
+      return <NotFound />;
+    }
     const {
       name,
       school,
@@ -25,12 +28,11 @@ const Wizard = ({ match }) => {
       dumbledoresArmy,
       orderOfThePhoenix,
     } = data;
-    console.log(data);
     return (
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.4 }}
+        transition={{ delay: 0.45 }}
       >
         <div>
           <div>{name}</div>

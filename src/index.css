@@ -113,8 +113,6 @@ body {
   font-size: 20px;
   margin-bottom: 20px;
 }
-.searchUL {
-}
 
 /* PAGINATION */
 .pagination-button {
@@ -143,8 +141,28 @@ body {
 /* POTION */
 .potion-item {
   border: 2px solid var(--whiteText);
-  margin: 20px;
-  padding: 20px;
+  padding: 50px 10px;
+  text-align: center;
+  max-height: 220px;
+}
+.potion-main-item {
+  text-align: center;
+  margin: 20px 30px;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.wizard-main-item {
+  text-align: center;
+  margin: 10px 30px;
+}
+.wizard-item {
+  border: 2px solid var(--whiteText);
+  padding: 60px 10px;
+  text-align: center;
+  max-height: 170px;
 }
 
 /* content: url("./assets/icons/navbarActive/wizards-active.png"); */
@@ -152,6 +170,29 @@ body {
 @media screen and (max-width: 800px) {
   .nav-icon {
     width: 10vh;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .potion-main-item {
+    margin: 20px 45px;
+  }
+  .wizard-main-item {
+    margin: 20px 45px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 2fr);
+  }
+  .potion-main-item {
+    margin: 20px 50px;
+  }
+  .wizard-main-item {
+    margin: 20px 50px;
   }
 }
 

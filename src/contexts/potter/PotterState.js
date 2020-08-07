@@ -8,7 +8,7 @@ const PotterState = ({ children }) => {
     isSearching: false,
     isLoading: false,
     currentPage: 1,
-    itemsPerPage: 13,
+    itemsPerPage: 12,
   };
   const [state, dispatch] = useReducer(PotterReducer, initialState);
   const { isSearching, currentPage, itemsPerPage } = state;

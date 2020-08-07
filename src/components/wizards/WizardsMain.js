@@ -35,7 +35,7 @@ const WizardsMain = () => {
         </motion.h1>
         <Search wizards={data} />
         <motion.div
-          initial={{ y: "-100vh" }}
+          initial={{ y: "-50vh" }}
           animate={{ y: 0 }}
           transition={{ type: "spring", stiffness: 70 }}
         >

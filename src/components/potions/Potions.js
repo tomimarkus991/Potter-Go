@@ -6,13 +6,13 @@ const Potions = ({ potions, isSearching }) => {
   return (
     <Fragment>
       {isSearching === false && (
-        <ul className="list-group-default">
+        <ul className="list-group-default wrapper">
           {potions.map((potion) => {
             return (
               <motion.li
                 key={potion._id}
-                className="list-group-item"
-                whileHover={{ scale: 1.5 }}
+                className="list-group-item potion-main-item"
+                whileHover={{ scale: 1.2 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <motion.span
