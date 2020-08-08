@@ -8,6 +8,9 @@ import WizardsMain from "./components/wizards/WizardsMain";
 import Wizard from "./components/wizards/Wizard";
 import NotFound from "./components/pages/NotFound";
 import PotionsMain from "./components/potions/PotionsMain";
+import HousesMain from "./components/houses/HousesMain";
+import House from "./components/houses/House";
+import SortingHatMain from "./components/sortingHat/SortingHatMain";
 
 const App = () => {
   return (
@@ -21,6 +24,9 @@ const App = () => {
             <Route exact path="/wizards" component={WizardsMain} />
             <Route exact path="/potions" component={PotionsMain} />
             <Route exact path="/wizards/:id" component={Wizard} />
+            <Route exact path="/houses" component={HousesMain} />
+            <Route exact path="/houses/:id" component={House} />
+            <Route exact path="/sortingHat" component={SortingHatMain} />
             <Route component={NotFound} />
           </Switch>
         </div>

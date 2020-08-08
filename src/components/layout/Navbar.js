@@ -38,8 +38,8 @@ const Navbar = () => {
       >
         <i className="fas fa-bars"></i>
       </span>
-      <motion.li className="nav-logo">
-        <Link className="nav-link" to="/">
+      <motion.li>
+        <Link className="nav-logo" to="/">
           <motion.img
             className="nav-img"
             src={HogwartsRegular}
@@ -148,7 +148,7 @@ const Navbar = () => {
         <motion.li
           whileHover={{
             backgroundColor: "#3a3b3c",
-            scale: 1.2,
+            scale: 1.1,
           }}
           transition={{ duration: 0.1 }}
           onHoverStart={(e) => {
