@@ -78,7 +78,20 @@ body {
 .hide {
   display: none;
 }
-
+.modal-main {
+  position: absolute;
+  left: 50%;
+}
+.modal {
+  position: absolute;
+  position: relative;
+  left: -50%;
+  background-color: var(--whiteText);
+  color: var(--secondary);
+  padding: 0.5rem 0.5rem 0.3rem 0.5rem;
+  margin-top: 10px;
+  border-radius: 20px;
+}
 /* MAIN */
 .App {
   text-align: center;
@@ -160,9 +173,12 @@ body {
 }
 .wizard-item {
   border: 2px solid var(--whiteText);
-  padding: 60px 10px;
+  padding: 60px 20px 10px 30px;
   text-align: center;
-  max-height: 170px;
+  height: 180px;
+}
+.wizard-name {
+  margin-top: 40px;
 }
 
 /* content: url("./assets/icons/navbarActive/wizards-active.png"); */

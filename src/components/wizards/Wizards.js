@@ -18,6 +18,7 @@ const Wizards = ({ wizards, isSearching }) => {
               >
                 <Link className="default-link" to={`/wizards/${wizard._id}`}>
                   <motion.span
+                    className="wizard-name"
                     initial={{ fontSize: "30px" }}
                     whileHover={{ color: "#4090fa" }}
                   >

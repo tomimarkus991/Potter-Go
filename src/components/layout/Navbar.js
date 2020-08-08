@@ -18,6 +18,7 @@ import {
 } from "../../assets/icons/navbarHover/NavbarHover";
 
 import { motion } from "framer-motion";
+import Modal from "./Modal";
 
 const Navbar = () => {
   const [homeTrainIcon, setHomeTrainIcon] = useState(HomeRegular);
@@ -54,8 +55,14 @@ const Navbar = () => {
             scale: 1.2,
           }}
           transition={{ duration: 0.1 }}
-          onHoverStart={() => setHomeTrainIcon(HomeHover)}
-          onHoverEnd={() => setHomeTrainIcon(HomeRegular)}
+          onHoverStart={(e) => {
+            e.target.children[1].classList.remove("hide");
+            setHomeTrainIcon(HomeHover);
+          }}
+          onHoverEnd={(e) => {
+            e.target.children[1].classList.add("hide");
+            setHomeTrainIcon(HomeRegular);
+          }}
         >
           <NavLink className="nav-link active" to="/">
             <img
@@ -64,20 +71,33 @@ const Navbar = () => {
               alt="Hogwarts Train"
             />
           </NavLink>
+          <div className="modal-main hide">
+            <Modal text="Home" />
+          </div>
         </motion.li>
 
         <motion.li
+          className="wizard-icon"
           whileHover={{
             backgroundColor: "#3a3b3c",
             scale: 1.2,
           }}
           transition={{ duration: 0.1 }}
-          onHoverStart={() => setWizardIcon(WizardsHover)}
-          onHoverEnd={() => setWizardIcon(WizardsRegular)}
+          onHoverStart={(e) => {
+            e.target.children[1].classList.remove("hide");
+            setWizardIcon(WizardsHover);
+          }}
+          onHoverEnd={(e) => {
+            e.target.children[1].classList.add("hide");
+            setWizardIcon(WizardsRegular);
+          }}
         >
           <NavLink className="nav-link active" to="/wizards">
             <img className="nav-icon" src={wizardIcon} alt="Wizards" />
           </NavLink>
+          <div className="modal-main hide">
+            <Modal text="Wizards" />
+          </div>
         </motion.li>
         <motion.li
           whileHover={{
@@ -85,12 +105,21 @@ const Navbar = () => {
             scale: 1.2,
           }}
           transition={{ duration: 0.1 }}
-          onHoverStart={() => setPotionsIcon(PotionsHover)}
-          onHoverEnd={() => setPotionsIcon(PotionsRegular)}
+          onHoverStart={(e) => {
+            e.target.children[1].classList.remove("hide");
+            setPotionsIcon(PotionsHover);
+          }}
+          onHoverEnd={(e) => {
+            e.target.children[1].classList.add("hide");
+            setPotionsIcon(PotionsRegular);
+          }}
         >
           <NavLink className="nav-link" to="/potions">
             <img className="nav-icon" src={potionsIcon} alt="Potions" />
           </NavLink>
+          <div className="modal-main hide">
+            <Modal text="Potions" />
+          </div>
         </motion.li>
 
         <motion.li
@@ -99,12 +128,21 @@ const Navbar = () => {
             scale: 1.2,
           }}
           transition={{ duration: 0.1 }}
-          onHoverStart={() => setHousesIcon(HousesHover)}
-          onHoverEnd={() => setHousesIcon(HousesRegular)}
+          onHoverStart={(e) => {
+            e.target.children[1].classList.remove("hide");
+            setHousesIcon(HousesHover);
+          }}
+          onHoverEnd={(e) => {
+            e.target.children[1].classList.add("hide");
+            setHousesIcon(HousesRegular);
+          }}
         >
           <NavLink className="nav-link" to="/houses">
             <img className="nav-icon" src={housesIcon} alt="Houses" />
           </NavLink>
+          <div className="modal-main hide">
+            <Modal text="Houses" />
+          </div>
         </motion.li>
 
         <motion.li
@@ -113,12 +151,21 @@ const Navbar = () => {
             scale: 1.2,
           }}
           transition={{ duration: 0.1 }}
-          onHoverStart={() => setSortingHatIcon(SortingHatHover)}
-          onHoverEnd={() => setSortingHatIcon(SortingHatRegular)}
+          onHoverStart={(e) => {
+            e.target.children[1].classList.remove("hide");
+            setSortingHatIcon(SortingHatHover);
+          }}
+          onHoverEnd={(e) => {
+            e.target.children[1].classList.add("hide");
+            setSortingHatIcon(SortingHatRegular);
+          }}
         >
           <NavLink className="nav-link" to="/sortingHat">
             <img className="nav-icon" src={sortingHatIcon} alt="Sorting Hat" />
           </NavLink>
+          <div className="modal-main hide">
+            <Modal text="Sorting Hat" />
+          </div>
         </motion.li>
       </ul>
     </nav>
