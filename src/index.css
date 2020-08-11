@@ -212,6 +212,15 @@ body {
   font-size: 6rem;
 }
 
+/* HOME */
+.hogwarts-logo {
+}
+
+.calculating {
+  margin-top: 50px;
+  font-size: 30px;
+}
+
 /* content: url("./assets/icons/navbarActive/wizards-active.png"); */
 
 @media screen and (max-width: 800px) {

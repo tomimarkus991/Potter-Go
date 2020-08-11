@@ -17,11 +17,15 @@ const SortingHatMain = () => {
   });
   setTimeout(() => {
     setCalculating(false);
-  }, 2000);
+  }, 11000);
   return (
     <div>
       <motion.h1 className="margin-top">Sortinghat</motion.h1>
-      {isCalculating && <div>Calculating</div>}
+      {isCalculating && (
+        <div className="calculating">
+          Taking data from your head. Please wait while I am calculating
+        </div>
+      )}
       {isCalculating === false && status === "success" && (
         <motion.div>
           <motion.div
