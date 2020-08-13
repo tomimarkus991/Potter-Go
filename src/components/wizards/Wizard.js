@@ -19,6 +19,10 @@ const Wizard = ({ match }) => {
     }
     const {
       name,
+      alias,
+      wand,
+      boggart,
+      patronus,
       school,
       species,
       role,
@@ -34,13 +38,41 @@ const Wizard = ({ match }) => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.45 }}
       >
-        <div>
-          <div>{name}</div>
-          <div>{school}</div>
-          <div>{species}</div>
-          <div>{role}</div>
-          <div>{bloodStatus}</div>
-          <div>
+        <div className="wizard-container">
+          {name && <div className="wizard-name">{name}</div>}
+          {alias && <div className="wizard-alias">{alias}</div>}
+          {school && <div className="wizard-school">{school}</div>}
+          {role && (
+            <div className="wizard-role">
+              {role.charAt(0).toUpperCase() + role.slice(1)}
+            </div>
+          )}
+          {wand && <div className="wizard-wand">{wand}</div>}
+          <div className="wizard-other">
+            {patronus && (
+              <div className="wizard-patronus">
+                Patronous:{" "}
+                {patronus.charAt(0).toUpperCase() + patronus.slice(1)}
+              </div>
+            )}
+            {boggart && (
+              <div className="wizard-boggart">
+                Boggart: {boggart.charAt(0).toUpperCase() + boggart.slice(1)}
+              </div>
+            )}
+            {species && (
+              <div className="wizard-species">
+                Species: {species.charAt(0).toUpperCase() + species.slice(1)}
+              </div>
+            )}
+            {bloodStatus && (
+              <div className="wizard-bloodStatus">
+                Blood Status:{" "}
+                {bloodStatus.charAt(0).toUpperCase() + bloodStatus.slice(1)}
+              </div>
+            )}
+          </div>
+          <div className="is-wizard-that">
             {ministryOfMagic ? (
               <div>
                 <span>Ministry of Magic </span>
@@ -52,8 +84,6 @@ const Wizard = ({ match }) => {
                 <i className="fas fa-times" />
               </div>
             )}
-          </div>
-          <div>
             {deathEater ? (
               <div>
                 <span>Death Eater </span>
@@ -65,8 +95,6 @@ const Wizard = ({ match }) => {
                 <i className="fas fa-times" />
               </div>
             )}
-          </div>
-          <div>
             {dumbledoresArmy ? (
               <div>
                 <span>Dumbledores Army </span>
@@ -78,15 +106,13 @@ const Wizard = ({ match }) => {
                 <i className="fas fa-times" />
               </div>
             )}
-          </div>
-          <div>
             {orderOfThePhoenix ? (
-              <div>
+              <div className="order-of-the-phoenix">
                 <span>Order of the Phoenix </span>
                 <i className="far fa-check-circle" />
               </div>
             ) : (
-              <div>
+              <div className="order-of-the-phoenix">
                 <span>Order of the Phoenix </span>
                 <i className="fas fa-times" />
               </div>

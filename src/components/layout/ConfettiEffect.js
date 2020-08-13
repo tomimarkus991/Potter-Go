@@ -12,8 +12,9 @@ const ConfettiEffect = () => {
     <Confetti
       width={width}
       height={height}
-      numberOfPieces={300}
+      numberOfPieces={2000}
       recycle={recyclevalue}
+      wind={0.05}
     />
   );
 };
