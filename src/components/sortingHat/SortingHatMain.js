@@ -7,6 +7,7 @@ import HufflepuffPNG from "../../assets/pictures/hufflepuff.png";
 import axios from "axios";
 import { useQuery } from "react-query";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const SortingHatMain = () => {
   const [isCalculating, setCalculating] = useState(true);
@@ -56,32 +57,41 @@ const SortingHatMain = () => {
             <span className="sortinghat-house">{data}</span>
             <div>
               {data === "Gryffindor" && (
-                <img
-                  className="house-image-sorting"
-                  src={GryffindorPNG}
-                  alt="House-Icon"
-                />
+                <Link to={`/houses/5a05e2b252f721a3cf2ea33f`}>
+                  {" "}
+                  <img
+                    className="house-image-sorting"
+                    src={GryffindorPNG}
+                    alt="House-Icon"
+                  />
+                </Link>
               )}
               {data === "Ravenclaw" && (
-                <img
-                  className="house-image-sorting"
-                  src={RavenclawPNG}
-                  alt="House-Icon"
-                />
+                <Link to="/houses/5a05da69d45bd0a11bd5e06f">
+                  <img
+                    className="house-image-sorting"
+                    src={RavenclawPNG}
+                    alt="House-Icon"
+                  />
+                </Link>
               )}
               {data === "Slytherin" && (
-                <img
-                  className="house-image-sorting"
-                  src={SlytherinPNG}
-                  alt="House-Icon"
-                />
+                <Link to="/houses/5a05dc8cd45bd0a11bd5e071">
+                  <img
+                    className="house-image-sorting"
+                    src={SlytherinPNG}
+                    alt="House-Icon"
+                  />
+                </Link>
               )}
               {data === "Hufflepuff" && (
-                <img
-                  className="house-image-sorting"
-                  src={HufflepuffPNG}
-                  alt="House-Icon"
-                />
+                <Link to="/houses/5a05dc58d45bd0a11bd5e070">
+                  <img
+                    className="house-image-sorting"
+                    src={HufflepuffPNG}
+                    alt="House-Icon"
+                  />
+                </Link>
               )}
             </div>
           </motion.div>
