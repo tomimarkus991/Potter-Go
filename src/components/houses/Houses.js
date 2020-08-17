@@ -1,7 +1,7 @@
 import React from "react";
 import GryffindorPNG from "../../assets/pictures/gryffindor.png";
 import SlytherinPNG from "../../assets/pictures/slytherin.png";
-import RavenclawPNG from "../../assets//pictures/ravenclaw.png";
+import RavenclawPNG from "../../assets/pictures/ravenclaw.png";
 import HufflepuffPNG from "../../assets/pictures/hufflepuff.png";
 import { Link } from "react-router-dom";
 import { motion } from "framer";

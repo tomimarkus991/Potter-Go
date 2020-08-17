@@ -1,5 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ConfettiEffect from "../layout/ConfettiEffect";
+import GryffindorPNG from "../../assets/pictures/gryffindor.png";
+import SlytherinPNG from "../../assets/pictures/slytherin.png";
+import RavenclawPNG from "../../assets/pictures/ravenclaw.png";
+import HufflepuffPNG from "../../assets/pictures/hufflepuff.png";
 import axios from "axios";
 import { useQuery } from "react-query";
 import { motion } from "framer-motion";
@@ -25,7 +29,7 @@ const SortingHatMain = () => {
   setTimeout(() => {
     setCalculating(false);
     setDifficult(false);
-  }, randomTime);
+  }, 1000);
   return (
     <div>
       <motion.h1 className="margin-top">Sortinghat</motion.h1>
@@ -50,6 +54,36 @@ const SortingHatMain = () => {
             drag
           >
             <span className="sortinghat-house">{data}</span>
+            <div>
+              {data === "Gryffindor" && (
+                <img
+                  className="house-image-sorting"
+                  src={GryffindorPNG}
+                  alt="House-Icon"
+                />
+              )}
+              {data === "Ravenclaw" && (
+                <img
+                  className="house-image-sorting"
+                  src={RavenclawPNG}
+                  alt="House-Icon"
+                />
+              )}
+              {data === "Slytherin" && (
+                <img
+                  className="house-image-sorting"
+                  src={SlytherinPNG}
+                  alt="House-Icon"
+                />
+              )}
+              {data === "Hufflepuff" && (
+                <img
+                  className="house-image-sorting"
+                  src={HufflepuffPNG}
+                  alt="House-Icon"
+                />
+              )}
+            </div>
           </motion.div>
           <ConfettiEffect />
         </motion.div>

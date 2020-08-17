@@ -261,6 +261,10 @@ body {
   font-size: 2em;
 }
 
+.house-image-sorting {
+  width: 250px;
+}
+
 /* HOME */
 
 /* content: url("./assets/icons/navbarActive/wizards-active.png"); */
