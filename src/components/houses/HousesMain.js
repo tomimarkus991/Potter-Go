@@ -7,7 +7,7 @@ const HousesMain = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ delay: 0.45 }}
+      transition={{ delay: 1 }}
     >
       <h1 className="headline heading">Houses</h1>
       <Houses />
