@@ -18,14 +18,44 @@ const House = ({ match }) => {
     return <Spinner />;
   }
   if (status === "success") {
-    const { name } = data[0];
+    const {
+      name,
+      founder,
+      mascot,
+      headOfHouse,
+      houseGhost,
+      values,
+      colors,
+    } = data[0];
     return (
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.45 }}
       >
-        <h1>{name}</h1>
+        <div className="house-container">
+          <div className="house-name">{name}</div>
+          <div className="house-founder">{founder}</div>
+          <div className="house-mascot">{mascot}</div>
+          <div className="house-head">{headOfHouse}</div>
+          <div className="house-ghost">{houseGhost}</div>
+          <div className="house-values">
+            They value{" "}
+            {values.map((value) => {
+              return <p className="house-value">{value} </p>;
+            })}
+          </div>
+          <div className="house-colors">
+            House colors are{" "}
+            {colors.map((color) => {
+              return (
+                <p className="house-color">
+                  {color.charAt(0).toUpperCase() + color.slice(1)}{" "}
+                </p>
+              );
+            })}
+          </div>
+        </div>
       </motion.div>
     );
   }

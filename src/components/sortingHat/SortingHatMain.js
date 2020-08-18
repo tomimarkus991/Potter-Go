@@ -30,7 +30,7 @@ const SortingHatMain = () => {
   setTimeout(() => {
     setCalculating(false);
     setDifficult(false);
-  }, 1000);
+  }, randomTime);
   return (
     <div>
       <motion.h1 className="margin-top">Sortinghat</motion.h1>
