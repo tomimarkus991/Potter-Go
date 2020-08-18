@@ -34,7 +34,7 @@ const PotionsMain = () => {
 
     return (
       <div>
-        <motion.h1 className="headline" drag={true}>
+        <motion.h1 className="headline heading" drag={true}>
           Potions
         </motion.h1>
         <Search potions={data} />

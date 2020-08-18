@@ -1,51 +1,45 @@
-import React, { useContext } from "react";
+import React from "react";
 import HogwartsLogo from "../../assets/pictures/hogwarts.png";
-import HogwartsMap from "../../assets/pictures/hogwartsMap.jpg";
-import { motion } from "framer";
-import PotterContext from "../../contexts/potter/PotterContext";
+import { motion } from "framer-motion";
 
 const Home = () => {
-  const { setSelectedImg } = useContext(PotterContext);
   return (
-    <div>
-      <div>
-        <img className="hogwarts-logo" src={HogwartsLogo} alt="Hogwarts" />
-      </div>
-      <p>
+    <motion.div className="home-container text">
+      <motion.div
+        className="headline heading"
+        drag
+        // dragConstraints={{ top: 20, left: 400, right: 400, bottom: 600 }}
+        dragElastic={0.2}
+        dragTransition={{ bounceStiffness: 600, bounceDamping: 10 }}
+      >
+        Home
+      </motion.div>
+      <motion.div>
+        <motion.img
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.45 }}
+          whileHover={{
+            scale: 1.25,
+          }}
+          className="hogwarts-logo"
+          src={HogwartsLogo}
+          alt="Hogwarts"
+        />
+      </motion.div>
+      <p className="intro">
         Hogwarts School of Witchcraft and Wizardry was the British wizarding
         school, located in the Scottish Highlands.It accepted magical students
         from Great Britain and Ireland for enrolment. It was a state-owned
         school, funded by the Ministry of Magic.{" "}
       </p>
-      <p>Location: Great Britain, Scotland</p>
-      <p>
-        Moto: Draco Dormiens Nunquam Titillandus (Never Tickle a Sleeping
-        Dragon)
+      <p className="location">It is located in Great Britain, Scotland</p>
+      <p className="moto">
+        Their moto is the following - <br /> Draco Dormiens Nunquam Titillandus
+        (Never Tickle a Sleeping Dragon)
       </p>
-      <ul className="list-group-default">
-        Houses:
-        <li>Gryffindor</li>
-        <li>Hufflepuff</li>
-        <li>Ravenclaw</li>
-        <li>Slytherin</li>
-      </ul>
-      <motion.div
-        layout
-        whileHover={{ opacity: 1, scale: 1.4 }}
-        whileTap={{
-          scale: 0.8,
-          borderRadius: "100%",
-        }}
-      >
-        <motion.img
-          src={HogwartsMap}
-          alt="Hogwarts"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-        />
-      </motion.div>
-    </div>
+      <div>Houses are Gryffindor, Hufflepuff, Ravenclaw & Slytherin</div>
+    </motion.div>
   );
 };
 

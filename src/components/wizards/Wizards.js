@@ -16,7 +16,7 @@ const Wizards = ({ wizards, isSearching }) => {
                 whileHover={{ scale: 1.2 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <Link className="default-link" to={`/wizards/${wizard._id}`}>
+                <Link className="wizard-link" to={`/wizards/${wizard._id}`}>
                   <motion.span
                     className="wizard-name"
                     initial={{ fontSize: "30px" }}

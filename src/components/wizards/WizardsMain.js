@@ -30,7 +30,7 @@ const WizardsMain = () => {
 
     return (
       <div>
-        <motion.h1 className="headline" drag={true}>
+        <motion.h1 className="headline heading" drag={true}>
           Wizards
         </motion.h1>
         <Search wizards={data} />

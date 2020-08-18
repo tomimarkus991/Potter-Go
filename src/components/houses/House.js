@@ -27,6 +27,22 @@ const House = ({ match }) => {
       values,
       colors,
     } = data[0];
+
+    let houseValues = values.slice(0).shift();
+    let houseColors = colors.slice(0).shift();
+
+    values
+      .slice(1, values.length - 1)
+      .map((value) => (houseValues += ", " + value));
+
+    houseValues += " & " + values.slice(-1).pop();
+
+    colors
+      .slice(1, colors.length - 1)
+      .map((color) => (houseColors += ", " + color));
+
+    houseColors += " & " + colors.slice(-1).pop();
+
     return (
       <motion.div
         initial={{ opacity: 0 }}
@@ -35,26 +51,14 @@ const House = ({ match }) => {
       >
         <div className="house-container">
           <div className="house-name">{name}</div>
-          <div className="house-founder">{founder}</div>
-          <div className="house-mascot">{mascot}</div>
-          <div className="house-head">{headOfHouse}</div>
-          <div className="house-ghost">{houseGhost}</div>
-          <div className="house-values">
-            They value{" "}
-            {values.map((value) => {
-              return <p className="house-value">{value} </p>;
-            })}
+          <div className="house-founder">Founder - {founder}</div>
+          <div className="house-mascot">
+            Mascot - {mascot.charAt(0).toUpperCase() + mascot.slice(1)}
           </div>
-          <div className="house-colors">
-            House colors are{" "}
-            {colors.map((color) => {
-              return (
-                <p className="house-color">
-                  {color.charAt(0).toUpperCase() + color.slice(1)}{" "}
-                </p>
-              );
-            })}
-          </div>
+          <div className="house-head">Head of House - {headOfHouse}</div>
+          <div className="house-ghost">House Ghost - {houseGhost}</div>
+          <div className="house-values">They value {houseValues}</div>
+          <div className="house-colors">House colors are {houseColors}</div>
         </div>
       </motion.div>
     );

@@ -13,7 +13,9 @@ const Houses = () => {
         className="house-image-holder"
         whileTap={{
           scale: 0.8,
-          borderRadius: "100%",
+        }}
+        whileHover={{
+          scale: 1.1,
         }}
       >
         <Link className="image-link" to={`/houses/5a05e2b252f721a3cf2ea33f`}>
@@ -24,7 +26,9 @@ const Houses = () => {
         className="house-image-holder"
         whileTap={{
           scale: 0.8,
-          borderRadius: "100%",
+        }}
+        whileHover={{
+          scale: 1.1,
         }}
       >
         <Link className="image-link" to={`/houses/5a05dc8cd45bd0a11bd5e071`}>
@@ -35,7 +39,9 @@ const Houses = () => {
         className="house-image-holder"
         whileTap={{
           scale: 0.8,
-          borderRadius: "100%",
+        }}
+        whileHover={{
+          scale: 1.1,
         }}
       >
         <Link className="image-link" to={`/houses/5a05da69d45bd0a11bd5e06f`}>
@@ -46,7 +52,9 @@ const Houses = () => {
         className="house-image-holder"
         whileTap={{
           scale: 0.8,
-          borderRadius: "100%",
+        }}
+        whileHover={{
+          scale: 1.1,
         }}
       >
         <Link className="image-link" to={`/houses/5a05dc58d45bd0a11bd5e070`}>

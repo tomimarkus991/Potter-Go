@@ -49,7 +49,7 @@ body {
   text-decoration: none;
 }
 .nav-icon {
-  padding: 2vh 2.2vh;
+  padding: 2vh 2vh;
   width: 11vh;
   border-radius: 20px;
 }
@@ -76,7 +76,7 @@ body {
   right: 20px;
   cursor: pointer;
   color: rgba(255, 255, 255, 0.8);
-  font-size: 24px;
+  font-size: 30px;
 }
 .active2 {
   display: block;
@@ -126,14 +126,14 @@ body {
 /* SEARCHING */
 .potion-list-item {
   cursor: default;
-  color: var(--darkerBlue);
+  color: var(--whiteText);
 }
 .search-input {
   color: var(--whiteText);
   background-color: var(--secondary);
   border: 2px solid var(--whiteText);
   border-radius: 40px;
-  padding: 10px;
+  padding: 14px;
   font-size: 20px;
   margin-bottom: 20px;
 }
@@ -161,6 +161,10 @@ body {
 .margin-top {
   margin-top: 10px;
 }
+.pagination {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
 
 /* POTION */
 .potion-item {
@@ -177,8 +181,16 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+.block {
+  display: block;
+}
 
 /* WIZARD */
+.wizard-link {
+  text-decoration: none;
+  list-style-type: none;
+  color: var(--whiteText);
+}
 .wizard-main-item {
   text-align: center;
   margin: 10px 30px;
@@ -272,6 +284,34 @@ body {
 .house-color {
   display: inline;
 }
+.house-name {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.house-founder {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+.house-mascot {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+.house-head {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+.house-ghost {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+.house-values {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.house-colors {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
 
 /* SORTING HAT */
 .sortinghat-house {
@@ -287,10 +327,35 @@ body {
 }
 
 /* HOME */
+.heading {
+  font-size: 3rem;
+  cursor: default;
+}
+.hogwarts-logo {
+  width: 250px;
+}
+.home-container {
+  margin: 30px 50px 0px 50px;
+}
+.text {
+  font-size: 20px;
+}
+.intro {
+  margin: 30px 0;
+}
+.location {
+  margin-bottom: 10px;
+}
+.moto {
+  margin-bottom: 20px;
+}
 
 /* content: url("./assets/icons/navbarActive/wizards-active.png"); */
 
 @media screen and (max-width: 800px) {
+  .hogwarts-logo {
+    width: 200px;
+  }
   .headline {
     margin-bottom: 10px;
   }
@@ -298,11 +363,13 @@ body {
     margin: 40px 10px 10px 10px;
   }
   .nav-icon {
-    width: 9vh;
+    width: 110px;
   }
   .wrapper {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
+  }
+  .houses-wrapper {
+    grid-template-columns: repeat(1, 1fr);
   }
   .potion-main-item {
     margin: 20px 45px;
@@ -313,6 +380,9 @@ body {
 }
 
 @media screen and (max-width: 520px) {
+  .hogwarts-logo {
+    width: 170px;
+  }
   .wrapper {
     grid-template-columns: repeat(1, 2fr);
   }

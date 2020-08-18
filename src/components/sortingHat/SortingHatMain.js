@@ -33,7 +33,7 @@ const SortingHatMain = () => {
   }, randomTime);
   return (
     <div>
-      <motion.h1 className="margin-top">Sortinghat</motion.h1>
+      <motion.h1 className="margin-top heading">Sortinghat</motion.h1>
       {isCalculating && (
         <div className="calculating">
           Taking data from your head. Please wait while I am calculating
