@@ -14,7 +14,6 @@ const ConfettiEffect = () => {
       height={height}
       numberOfPieces={2000}
       recycle={recyclevalue}
-      wind={0.05}
     />
   );
 };

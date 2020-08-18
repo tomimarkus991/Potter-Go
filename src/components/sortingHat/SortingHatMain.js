@@ -45,22 +45,28 @@ const SortingHatMain = () => {
 
       {isCalculating === false && status === "success" && (
         <motion.div>
-          <motion.div
-            whileHover={{
-              scale: 1.2,
-            }}
-            animate={{ rotate: 720 }}
-            transition={{ ease: "easeOut", duration: 1 }}
-            className="margin-top"
-            drag
-          >
-            <span className="sortinghat-house">{data}</span>
+          <motion.div className="margin-top">
+            <motion.div
+              whileHover={{
+                scale: 1.2,
+              }}
+              animate={{ rotate: 720 }}
+              transition={{ ease: "easeOut", duration: 1 }}
+            >
+              <span className="sortinghat-house">{data}</span>
+            </motion.div>
             <div>
               {data === "Gryffindor" && (
                 <Link to={`/houses/5a05e2b252f721a3cf2ea33f`}>
                   {" "}
-                  <img
+                  <motion.img
                     className="house-image-sorting"
+                    whileHover={{
+                      scale: 1.2,
+                    }}
+                    whileTap={{
+                      scale: 0.8,
+                    }}
                     src={GryffindorPNG}
                     alt="House-Icon"
                   />
@@ -68,8 +74,14 @@ const SortingHatMain = () => {
               )}
               {data === "Ravenclaw" && (
                 <Link to="/houses/5a05da69d45bd0a11bd5e06f">
-                  <img
+                  <motion.img
                     className="house-image-sorting"
+                    whileHover={{
+                      scale: 1.2,
+                    }}
+                    whileTap={{
+                      scale: 0.8,
+                    }}
                     src={RavenclawPNG}
                     alt="House-Icon"
                   />
@@ -77,8 +89,14 @@ const SortingHatMain = () => {
               )}
               {data === "Slytherin" && (
                 <Link to="/houses/5a05dc8cd45bd0a11bd5e071">
-                  <img
+                  <motion.img
                     className="house-image-sorting"
+                    whileHover={{
+                      scale: 1.2,
+                    }}
+                    whileTap={{
+                      scale: 0.8,
+                    }}
                     src={SlytherinPNG}
                     alt="House-Icon"
                   />
@@ -86,8 +104,14 @@ const SortingHatMain = () => {
               )}
               {data === "Hufflepuff" && (
                 <Link to="/houses/5a05dc58d45bd0a11bd5e070">
-                  <img
+                  <motion.img
                     className="house-image-sorting"
+                    whileHover={{
+                      scale: 1.2,
+                    }}
+                    whileTap={{
+                      scale: 0.8,
+                    }}
                     src={HufflepuffPNG}
                     alt="House-Icon"
                   />
