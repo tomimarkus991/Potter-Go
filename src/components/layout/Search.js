@@ -23,20 +23,17 @@ const Search = ({ wizards, potions }) => {
         <ul className="searchUL list-group-default">
           {wizards.map((wizard) => {
             return (
-              <motion.li
-                key={wizard._id}
-                whileHover={{ scale: 1.5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
+              <li key={wizard._id}>
                 <Link className="default-link" to={`/wizards/${wizard._id}`}>
-                  <motion.span
-                    initial={{ fontSize: "30px" }}
-                    whileHover={{ color: "#4090fa" }}
+                  <motion.div
+                    initial={{ fontSize: "30px", color: "#e4e6eb" }}
+                    whileHover={{ color: "#4090fa", scale: 1.5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
                     {wizard.name}
-                  </motion.span>
+                  </motion.div>
                 </Link>
-              </motion.li>
+              </li>
             );
           })}
         </ul>
@@ -45,19 +42,19 @@ const Search = ({ wizards, potions }) => {
         <ul className="searchUL list-group-default">
           {potions.map((potion) => {
             return (
-              <motion.li
-                key={potion._id}
-                whileHover={{ scale: 1.5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <motion.span
-                  className="potion-list-item"
-                  initial={{ fontSize: "30px" }}
-                  whileHover={{ color: "#4090fa" }}
+              <li key={potion._id}>
+                <motion.div
+                  initial={{
+                    fontSize: "30px",
+                    color: "#e4e6eb",
+                    cursor: "default",
+                  }}
+                  whileHover={{ color: "#4090fa", scale: 1.5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
                 >
                   {potion.spell}
-                </motion.span>
-              </motion.li>
+                </motion.div>
+              </li>
             );
           })}
         </ul>

@@ -124,10 +124,6 @@ body {
 }
 
 /* SEARCHING */
-.potion-list-item {
-  cursor: default;
-  color: var(--whiteText);
-}
 .search-input {
   color: var(--whiteText);
   background-color: var(--secondary);
