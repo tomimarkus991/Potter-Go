@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const Search = ({ wizards, potions }) => {
   const { handleSearchChange, isSearching } = useContext(PotterContext);
   useEffect(() => {
-    const searchInput = document.querySelector(".search-input");
+    let searchInput = document.querySelector(".search-input");
     handleSearchChange(searchInput);
     // eslint-disable-next-line
   }, []);
@@ -14,7 +14,7 @@ const Search = ({ wizards, potions }) => {
     <div>
       <motion.input
         type="text"
-        placeholder="Find someone"
+        placeholder="Search"
         className="search-input"
         onChange={(e) => handleSearchChange(e.target)}
         whileHover={{ scale: 1.2 }}
