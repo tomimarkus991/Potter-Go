@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import PotterContext from "../../contexts/potter/PotterContext";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import PotionItem from "../potions/PotionItem";
 
 const Search = ({ wizards, potions }) => {
   const { handleSearchChange, isSearching } = useContext(PotterContext);
@@ -39,20 +40,22 @@ const Search = ({ wizards, potions }) => {
         </ul>
       )}
       {isSearching && potions !== undefined && wizards === undefined && (
-        <ul className="searchUL list-group-default">
+        <ul className="searchUL list-group-default potion-search-ul">
           {potions.map((potion) => {
             return (
-              <li key={potion._id}>
+              <li
+                className="list-group-item potion-main-item search-potion-item"
+                key={potion._id}
+              >
                 <motion.div
+                  className="potion-list-item"
                   initial={{
-                    fontSize: "30px",
-                    color: "#e4e6eb",
-                    cursor: "default",
+                    fontSize: "25px",
                   }}
-                  whileHover={{ color: "#4090fa", scale: 1.5 }}
+                  whileHover={{ color: "#4090fa", scale: 1.2 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  {potion.spell}
+                  <PotionItem potion={potion} />
                 </motion.div>
               </li>
             );

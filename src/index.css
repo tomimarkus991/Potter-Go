@@ -124,6 +124,10 @@ body {
 }
 
 /* SEARCHING */
+.potion-list-item {
+  cursor: default;
+  color: var(--whiteText);
+}
 .search-input {
   color: var(--whiteText);
   background-color: var(--secondary);
@@ -132,6 +136,11 @@ body {
   padding: 14px;
   font-size: 20px;
   margin-bottom: 20px;
+}
+.potion-search-ul {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 400px;
 }
 
 /* PAGINATION */

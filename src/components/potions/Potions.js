@@ -9,20 +9,16 @@ const Potions = ({ potions, isSearching }) => {
         <ul className="list-group-default wrapper">
           {potions.map((potion) => {
             return (
-              <motion.li
-                key={potion._id}
-                className="list-group-item potion-main-item"
-                whileHover={{ scale: 1.2 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <motion.span
+              <li key={potion._id} className="list-group-item potion-main-item">
+                <motion.div
                   className="potion-list-item"
                   initial={{ fontSize: "25px" }}
-                  whileHover={{ color: "#4090fa" }}
+                  whileHover={{ color: "#4090fa", scale: 1.2 }}
+                  transition={{ type: "spring", stiffness: 300 }}
                 >
                   <PotionItem potion={potion} />
-                </motion.span>
-              </motion.li>
+                </motion.div>
+              </li>
             );
           })}
         </ul>
