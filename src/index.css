@@ -69,6 +69,8 @@ body {
 }
 .nav-logo {
   text-decoration: none;
+  list-style-type: none;
+  list-style: none;
 }
 .navbar-toggle {
   position: absolute;

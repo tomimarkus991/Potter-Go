@@ -15,7 +15,7 @@ const PotionsMain = () => {
 
   const fetchPotions = async () => {
     const res = await axios.get(
-      `https://www.potterapi.com/v1/spells?key=$2a$10$ySBrKvbcDFU/nmahzEQPRej0W0ItuaCWrJWCy9VZ.Mcf.3GQiMDZ2`
+      `https://www.potterapi.com/v1/spells?key=$2a$10$ySBrKvbcDFU${process.env.REACT_APP_POTTER_API_KEY}`
     );
     return res.data;
   };

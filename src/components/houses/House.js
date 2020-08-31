@@ -8,7 +8,7 @@ const House = ({ match }) => {
   let houseID = match.params.id;
   const fetchHouses = async () => {
     const res = await axios.get(
-      `https://www.potterapi.com/v1/houses/${houseID}?key=$2a$10$ySBrKvbcDFU/nmahzEQPRej0W0ItuaCWrJWCy9VZ.Mcf.3GQiMDZ2`
+      `https://www.potterapi.com/v1/houses/${houseID}?key=$2a$10$ySBrKvbcDFU${process.env.REACT_APP_POTTER_API_KEY}`
     );
     return res.data;
   };
