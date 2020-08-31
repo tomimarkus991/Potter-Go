@@ -44,17 +44,16 @@ const SortingHatMain = () => {
       )}
 
       {isCalculating === false && status === "success" && (
-        <motion.div>
-          <motion.div className="margin-top">
-            <motion.div
-              whileHover={{
-                scale: 1.2,
-              }}
-              animate={{ rotate: 720 }}
-              transition={{ ease: "easeOut", duration: 1 }}
-            >
-              <span className="sortinghat-house">{data}</span>
-            </motion.div>
+        <div>
+          <div className="margin-top">
+            <div>
+              <motion.div
+                className="sortinghat-house"
+                animate={{ rotate: 720 }}
+              >
+                {data}
+              </motion.div>
+            </div>
             <div>
               {data === "Gryffindor" && (
                 <Link to={`/houses/5a05e2b252f721a3cf2ea33f`}>
@@ -118,9 +117,9 @@ const SortingHatMain = () => {
                 </Link>
               )}
             </div>
-          </motion.div>
+          </div>
           <ConfettiEffect />
-        </motion.div>
+        </div>
       )}
     </div>
   );

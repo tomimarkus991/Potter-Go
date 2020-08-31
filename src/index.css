@@ -323,6 +323,7 @@ body {
 /* SORTING HAT */
 .sortinghat-house {
   font-size: 6rem;
+  margin-bottom: 100px;
 }
 .calculating {
   margin-top: 50px;
@@ -360,6 +361,18 @@ body {
 /* content: url("./assets/icons/navbarActive/wizards-active.png"); */
 
 @media screen and (max-width: 800px) {
+  .calculating {
+    font-size: 1.8em;
+  }
+  .is-difficult {
+    font-size: 1.5em;
+  }
+  .sortinghat-house {
+    font-size: 3rem;
+  }
+  .house-image-sorting {
+    width: 175px;
+  }
   .hogwarts-logo {
     width: 200px;
   }
