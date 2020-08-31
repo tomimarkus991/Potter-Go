@@ -5,23 +5,12 @@ import { motion } from "framer-motion";
 const Home = () => {
   return (
     <motion.div className="home-container text">
-      <motion.div
-        className="headline heading"
-        drag
-        // dragConstraints={{ top: 20, left: 400, right: 400, bottom: 600 }}
-        dragElastic={0.2}
-        dragTransition={{ bounceStiffness: 600, bounceDamping: 10 }}
-      >
-        Home
-      </motion.div>
+      <motion.div className="headline heading">Home</motion.div>
       <motion.div>
         <motion.img
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          whileHover={{
-            scale: 1.25,
-          }}
           className="hogwarts-logo"
           src={HogwartsLogo}
           alt="Hogwarts"

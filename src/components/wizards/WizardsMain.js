@@ -30,9 +30,7 @@ const WizardsMain = () => {
 
     return (
       <div>
-        <motion.h1 className="headline heading" drag={true}>
-          Wizards
-        </motion.h1>
+        <motion.h1 className="headline heading">Wizards</motion.h1>
         <Search wizards={data} />
         <motion.div
           initial={{ y: "-50vh" }}

@@ -34,9 +34,7 @@ const PotionsMain = () => {
 
     return (
       <div>
-        <motion.h1 className="headline heading" drag={true}>
-          Potions
-        </motion.h1>
+        <motion.h1 className="headline heading">Potions</motion.h1>
         <Search potions={data} />
         <motion.div
           initial={{ y: "-50vh" }}
