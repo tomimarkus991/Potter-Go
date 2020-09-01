@@ -50,6 +50,7 @@ const SortingHatMain = () => {
               <motion.div
                 className="sortinghat-house"
                 animate={{ rotate: 720 }}
+                transition={{ ease: "easeOut", duration: 1 }}
               >
                 {data}
               </motion.div>
