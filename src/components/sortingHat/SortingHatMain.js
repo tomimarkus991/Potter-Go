@@ -4,8 +4,6 @@ import GryffindorPNG from "../../assets/pictures/gryffindor.png";
 import SlytherinPNG from "../../assets/pictures/slytherin.png";
 import RavenclawPNG from "../../assets/pictures/ravenclaw.png";
 import HufflepuffPNG from "../../assets/pictures/hufflepuff.png";
-import axios from "axios";
-import { useQuery } from "react-query";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -13,15 +11,26 @@ const SortingHatMain = () => {
   const [isCalculating, setCalculating] = useState(true);
   const [isDifficult, setDifficult] = useState(false);
   const [randomTime] = useState(Math.round(Math.random() * 9500 + 5000));
-  const fetchHouse = async () => {
-    const res = await axios.get(
-      `https://www.potterapi.com/v1/sortingHat?key=$2a$10$ySBrKvbcDFU${process.env.REACT_APP_POTTER_API_KEY}`
-    );
-    return res.data;
+  // const fetchHouse = async () => {
+  //   const res = await axios.get(
+  //     `https://www.potterapi.com/v1/sortingHat?key=$2a$10$ySBrKvbcDFU${process.env.REACT_APP_POTTER_API_KEY}`
+  //   );
+  //   return res.data;
+  // };
+  // const { data, status } = useQuery(
+  //   "getRandomHouse",
+  //   fetchHouse,
+  //   {
+  //     refetchOnWindowFocus: false,
+  //   }
+  // );
+  // make a function that will return a random house
+  const getRandomHouse = () => {
+    const houses = ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"];
+    return houses[Math.floor(Math.random() * houses.length)];
   };
-  const { data, status } = useQuery("getRandomHouse", fetchHouse, {
-    refetchOnWindowFocus: false,
-  });
+  const data = getRandomHouse();
+
   if (randomTime >= 10000 && isCalculating === true) {
     setTimeout(() => {
       setDifficult(true);
@@ -43,7 +52,8 @@ const SortingHatMain = () => {
         <div className="is-difficult">It is very difficult to decide</div>
       )}
 
-      {isCalculating === false && status === "success" && (
+      {isCalculating === false && (
+        // {isCalculating === false && status === "success" && (
         <div>
           <div className="margin-top">
             <div>
